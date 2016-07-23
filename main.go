@@ -12,7 +12,7 @@ func main() {
 	var port = flag.String("port", "1001", "port to run the file server on ")
 	flag.Parse()
 
-	s := fmt.Sprintf(":%s", *port)
+	s := fmt.Sprintf(":%s", port)
 	panic(http.ListenAndServe(s, http.FileServer(http.Dir("./"))))
 }
 
